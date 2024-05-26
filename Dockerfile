@@ -21,7 +21,7 @@ RUN \
     JELLYFIN_RELEASE=$(curl -sX GET https://repo.jellyfin.org/ubuntu/dists/jammy/main/binary-amd64/Packages |grep -A 7 -m 1 'Package: jellyfin-server' | awk -F ': ' '/Version/{print $2;exit}'); \
   fi && \
   apt-get update && \
-  apt-get install fonts-noto-cjk-extra && \
+  apt-get install fonts-noto-cjk-extra fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming && \
   apt-get install 
   apt-get install -y --no-install-recommends \
     at \
